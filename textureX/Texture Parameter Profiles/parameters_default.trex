@@ -1,0 +1,80 @@
+hist,toggle,on
+hist,preprocess,None
+hist,preprocess,Gradient2D_sobel
+hist,preprocess,Gradient3D_Filter_sobel
+hist,preprocess,Local_Entropy_Filter_3
+hist,preprocess,Local_Range_Filter_3
+hist,preprocess,Local_STD_Filter_3
+hist,preprocess,LoG_Filter_10_2
+hist,preprocess,LoG_Filter_12_2p5
+hist,preprocess,LoG_Filter_4_1
+hist,preprocess,LoG_Filter_6_1p5
+hist,preprocess,LoG_Filter_8_1p8
+hist,preprocess,Threshold_1000
+hist,preprocess,Threshold_250
+hist,preprocess,Threshold_500
+hist,preprocess,Threshold_750
+glcm,toggle,on
+glcm,preprocess,None
+glcm,bd,4
+glcm,bd,5
+glcm,bd,6
+glcm,bd,7
+glcm,bd,8
+glcm,gl,[0 4095]
+glcm,dim,2D
+glcm,dim,3D
+glcm,offset,[1 0 0]
+glcm,offset,[0 1 0]
+glcm,offset,[0 0 1]
+glcm,offset,[1 1 0]
+glcm,offset,[-1 1 0]
+glcm,offset,[0 1 1]
+glcm,offset,[0 1 -1]
+glcm,offset,[1 0 1]
+glcm,offset,[1 0 -1]
+glcm,offset,[1 1 1]
+glcm,offset,[-1 1 1]
+glcm,offset,[1 1 -1]
+glcm,offset,[-1 1 -1]
+glcm,dist,1
+glcm,dist,3
+glcm,dist,5
+glrlm,toggle,on
+glrlm,preprocess,None
+glrlm,bd,4
+glrlm,bd,5
+glrlm,bd,6
+glrlm,bd,7
+glrlm,bd,8
+glrlm,gl,[0 4095]
+glrlm,dim,2D
+glrlm,dim,3D
+glrlm,offset,[1 0 0]
+glrlm,offset,[0 1 0]
+glrlm,offset,[0 0 1]
+glrlm,offset,[1 1 0]
+glrlm,offset,[-1 1 0]
+glrlm,offset,[0 1 1]
+glrlm,offset,[0 1 -1]
+glrlm,offset,[1 0 1]
+glrlm,offset,[1 0 -1]
+glrlm,offset,[1 1 1]
+glrlm,offset,[-1 1 1]
+glrlm,offset,[1 1 -1]
+glrlm,offset,[-1 1 -1]
+ngtdm,toggle,on
+ngtdm,preprocess,None
+ngtdm,bd,4
+ngtdm,bd,5
+ngtdm,bd,6
+ngtdm,bd,7
+ngtdm,bd,8
+ngtdm,gl,[0 4095]
+ngtdm,dim,2D
+ngtdm,dim,3D
+ngtdm,dist,1
+laws2D,toggle,on
+laws2D,preprocess,None
+lung,toggle,on
+lung,preprocess,None

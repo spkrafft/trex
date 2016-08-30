@@ -1,0 +1,33 @@
+dvh,toggle,on
+plan,toggle,on
+location,toggle,on
+spatialdvh,toggle,on
+spatialdvh,weight,Radial_XY
+spatialdvh,weight,Sup_Inf
+spatialdvh,weight,Ant_Post
+spatialdvh,weight,Right_Left
+mapdvh,toggle,on
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Sum
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Mean
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Per10
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Per25
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Per90
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Per95
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Entropy
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Energy
+mapdvh,map,HIST.MAP.31.15.0.None.2D.RMS
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.Entropy
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.Homogeneity1
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.SumAverage
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.SumEntropy
+mapdvh,map,GLRLM.MAP.31.15.0.None.8.[0 4095].2D.GLNU
+mapdvh,map,GLRLM.MAP.31.15.0.None.8.[0 4095].2D.HGRE
+mapdvh,map,GLRLM.MAP.31.15.0.None.8.[0 4095].2D.SRHGE
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5L5_Mean
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5L5_Energy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5L5_RMS
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5E5_Energy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5E5_RMS
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5S5_Energy
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.LAA856
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.Reserve

@@ -1,0 +1,209 @@
+dvh,toggle,off
+plan,toggle,off
+location,toggle,off
+spatialdvh,toggle,off
+spatialdvh,weight,Radial_XY
+spatialdvh,weight,Sup_Inf
+spatialdvh,weight,Ant_Post
+spatialdvh,weight,Right_Left
+mapdvh,toggle,on
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Sum
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Mean
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Min
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Max
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Variance
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Skewness
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Kurtosis
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Range
+mapdvh,map,HIST.MAP.31.15.0.None.2D.MeanAbsDeviation
+mapdvh,map,HIST.MAP.31.15.0.None.2D.MedianAbsDeviation
+mapdvh,map,HIST.MAP.31.15.0.None.2D.InterQuartileRange
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Per01
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Per10
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Per25
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Per50
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Per75
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Per90
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Per95
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Per99
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Entropy
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Uniformity
+mapdvh,map,HIST.MAP.31.15.0.None.2D.Energy
+mapdvh,map,HIST.MAP.31.15.0.None.2D.RMS
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.AutoCorrelation
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.ClusterProminence
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.ClusterShade
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.ClusterTendency
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.Contrast
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.Correlation
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.DiffEntropy
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.Dissimilarity
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.Energy
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.Entropy
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.Homogeneity1
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.Homogeneity2
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.InfoMC1
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.InfoMC2
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.InDiffMomNorm
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.InDiffMom
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.InDiffNorm
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.InVariance
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.MaxProb
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.SumAverage
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.SumEntropy
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.SumVariance
+mapdvh,map,GLCM.MAP.31.15.0.None.8.[0 4095].1.2D.Variance
+mapdvh,map,GLRLM.MAP.31.15.0.None.8.[0 4095].2D.SRE
+mapdvh,map,GLRLM.MAP.31.15.0.None.8.[0 4095].2D.LRE
+mapdvh,map,GLRLM.MAP.31.15.0.None.8.[0 4095].2D.GLNU
+mapdvh,map,GLRLM.MAP.31.15.0.None.8.[0 4095].2D.RLNU
+mapdvh,map,GLRLM.MAP.31.15.0.None.8.[0 4095].2D.Fraction
+mapdvh,map,GLRLM.MAP.31.15.0.None.8.[0 4095].2D.LGRE
+mapdvh,map,GLRLM.MAP.31.15.0.None.8.[0 4095].2D.HGRE
+mapdvh,map,GLRLM.MAP.31.15.0.None.8.[0 4095].2D.SRLGE
+mapdvh,map,GLRLM.MAP.31.15.0.None.8.[0 4095].2D.SRHGE
+mapdvh,map,GLRLM.MAP.31.15.0.None.8.[0 4095].2D.LRLGE
+mapdvh,map,GLRLM.MAP.31.15.0.None.8.[0 4095].2D.LRHGE
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5L5_Mean
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5L5_Variance
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5L5_Skewness
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5L5_Kurtosis
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5L5_Entropy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5L5_Uniformity
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5L5_Energy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5L5_RMS
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5E5_Mean
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5E5_Variance
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5E5_Skewness
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5E5_Kurtosis
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5E5_Entropy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5E5_Uniformity
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5E5_Energy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5E5_RMS
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5S5_Mean
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5S5_Variance
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5S5_Skewness
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5S5_Kurtosis
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5S5_Entropy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5S5_Uniformity
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5S5_Energy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5S5_RMS
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5W5_Mean
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5W5_Variance
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5W5_Skewness
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5W5_Kurtosis
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5W5_Entropy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5W5_Uniformity
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5W5_Energy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5W5_RMS
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5R5_Mean
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5R5_Variance
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5R5_Skewness
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5R5_Kurtosis
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5R5_Entropy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5R5_Uniformity
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5R5_Energy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.L5R5_RMS
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5E5_Mean
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5E5_Variance
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5E5_Skewness
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5E5_Kurtosis
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5E5_Entropy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5E5_Uniformity
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5E5_Energy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5E5_RMS
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5S5_Mean
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5S5_Variance
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5S5_Skewness
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5S5_Kurtosis
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5S5_Entropy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5S5_Uniformity
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5S5_Energy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5S5_RMS
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5W5_Mean
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5W5_Variance
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5W5_Skewness
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5W5_Kurtosis
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5W5_Entropy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5W5_Uniformity
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5W5_Energy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5W5_RMS
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5R5_Mean
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5R5_Variance
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5R5_Skewness
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5R5_Kurtosis
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5R5_Entropy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5R5_Uniformity
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5R5_Energy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.E5R5_RMS
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5S5_Mean
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5S5_Variance
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5S5_Skewness
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5S5_Kurtosis
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5S5_Entropy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5S5_Uniformity
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5S5_Energy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5S5_RMS
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5W5_Mean
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5W5_Variance
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5W5_Skewness
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5W5_Kurtosis
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5W5_Entropy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5W5_Uniformity
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5W5_Energy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5W5_RMS
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5R5_Mean
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5R5_Variance
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5R5_Skewness
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5R5_Kurtosis
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5R5_Entropy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5R5_Uniformity
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5R5_Energy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.S5R5_RMS
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.W5W5_Mean
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.W5W5_Variance
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.W5W5_Skewness
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.W5W5_Kurtosis
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.W5W5_Entropy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.W5W5_Uniformity
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.W5W5_Energy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.W5W5_RMS
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.W5R5_Mean
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.W5R5_Variance
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.W5R5_Skewness
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.W5R5_Kurtosis
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.W5R5_Entropy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.W5R5_Uniformity
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.W5R5_Energy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.W5R5_RMS
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.R5R5_Mean
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.R5R5_Variance
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.R5R5_Skewness
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.R5R5_Kurtosis
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.R5R5_Entropy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.R5R5_Uniformity
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.R5R5_Energy
+mapdvh,map,LAWS2D.MAP.31.15.0.None.2D.R5R5_RMS
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.Mode
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.LAA856
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.LAA856Per
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.LAA864
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.LAA864Per
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.LAA900
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.LAA900Per
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.LAA910
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.LAA910Per
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.LAA960
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.LAA960Per
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.Reserve
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.ReservePer
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.Number910
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.MeanVol910
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.StdVol910
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.D910
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.K910
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.Number960
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.MeanVol960
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.StdVol960
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.D960
+mapdvh,map,LUNG.MAP.31.15.0.None.2D.K960

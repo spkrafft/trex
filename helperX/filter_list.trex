@@ -1,0 +1,16 @@
+Parameter Name,Matlab Name,Full Name,Latex Name
+Filter,Gradient2D_sobel,2D Sobel Gradient Filter,2D Sobel Gradient Filter
+Filter,Gradient3D_Filter_sobel,3D Sobel Gradient Filter,3D Sobel Gradient Filter
+Filter,LoG_Filter_10_2,Laplacian of Gaussian Filter (Size=10; Sigma=2),Laplacian of Gaussian Filter (Size=10; Sigma=2)
+Filter,LoG_Filter_12_2p5,Laplacian of Gaussian Filter (Size=12; Sigma=2.5),Laplacian of Gaussian Filter (Size=12; Sigma=2.5)
+Filter,LoG_Filter_4_1,Laplacian of Gaussian Filter (Size=4; Sigma=1),Laplacian of Gaussian Filter (Size=4; Sigma=1)
+Filter,LoG_Filter_6_1p5,Laplacian of Gaussian Filter (Size=6; Sigma=1.5),Laplacian of Gaussian Filter (Size=6; Sigma=1.5)
+Filter,LoG_Filter_8_1p8,Laplacian of Gaussian Filter (Size=8; Sigma=1.8),Laplacian of Gaussian Filter (Size=8; Sigma=1.8)
+Filter,Local_Entropy_Filter_3,Local Entropy Filter (NHood=3),Local Entropy Filter (NHood=3)
+Filter,Local_Range_Filter_3,Local Range Filter (NHood=3),Local Range Filter (NHood=3)
+Filter,Local_STD_Filter_3,Local Standard Deviation Filter (NHood=3),Local Standard Deviation Filter (NHood=3)
+Filter,None,None,None
+Filter,Threshold_1000,Threshold 0 HU,Threshold 0 HU
+Filter,Threshold_250,Threshold -750 HU,Threshold -750 HU
+Filter,Threshold_500,Threshold -500 HU,Threshold -500 HU
+Filter,Threshold_750,Threshold -250 HU,Threshold -250 HU

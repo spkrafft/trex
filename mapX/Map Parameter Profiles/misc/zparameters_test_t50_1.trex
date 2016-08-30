@@ -1,0 +1,14 @@
+glcm,toggle,on
+glcm,block_size,31
+glcm,overlap,15
+glcm,shift,0
+glcm,shift,5
+glcm,shift,10
+glcm,shift,15
+glcm,preprocess,None
+glcm,bd,4
+glcm,bd,6
+glcm,bd,8
+glcm,gl,[0 4095]
+glcm,dist,1
+glcm,dim,2D

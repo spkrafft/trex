@@ -1,0 +1,206 @@
+Feature Class,Matlab Name,Full Feature Name,Latex Feature Name
+GLCM,AutoCorrelation,Autocorrelation,Autocorrelation
+GLCM,ClusterProminence,Cluster Prominence,Cluster Prominence
+GLCM,ClusterShade,Cluster Shade,Cluster Shade
+GLCM,ClusterTendency,Cluster Tendency,Cluster Tendency
+GLCM,Contrast,Contrast,Contrast
+GLCM,Correlation,Correlation,Correlation
+GLCM,DiffEntropy,Difference Entropy,Difference Entropy
+GLCM,Dissimilarity,Dissimilarity,Dissimilarity
+GLCM,Energy,Energy,Energy
+GLCM,Entropy,Entropy,Entropy
+GLCM,Homogeneity1,Homogeneity 1,Homogeneity 1
+GLCM,Homogeneity2,Homogeneity 2,Homogeneity 2
+GLCM,InfoMC1,Information Measures of Correlation 1,Information Measures of Correlation 1
+GLCM,InfoMC2,Information Measures of Correlation 1,Information Measures of Correlation 1
+GLCM,InDiffMomNorm,Inverse Difference Moment Normalized,Inverse Difference Moment Normalized
+GLCM,InDiffMom,Inverse Difference Moment,Inverse Difference Moment
+GLCM,InDiffNorm,Inverse Difference Normalized,Inverse Difference Normalized
+GLCM,InVariance,Inverse Variance,Inverse Variance
+GLCM,MaxProb,Max Probability,Max Probability
+GLCM,SumAverage,Sum Average,Sum Average
+GLCM,SumEntropy,Sum Entropy,Sum Entropy
+GLCM,SumVariance,Sum Variance,Sum Variance
+GLCM,Variance,Variance,Variance
+GLRLM,SRE,Short Run Emphasis,Short Run Emphasis
+GLRLM,LRE,Long Run Emphasis,Long Run Emphasis
+GLRLM,GLNU,Gray Level Nonuniformity,Gray Level Nonuniformity
+GLRLM,RLNU,Run Length Nonuniformity,Run Length Nonuniformity
+GLRLM,Fraction,Run Percentage/Fraction,Run Percentage/Fraction
+GLRLM,LGRE,Low Gray Level Run Emphasis,Low Gray Level Run Emphasis
+GLRLM,HGRE,High Gray Level Run Emphasis,High Gray Level Run Emphasis
+GLRLM,SRLGE,Short Run Low Gray Level Emphasis,Short Run Low Gray Level Emphasis
+GLRLM,SRHGE,Short Run High Gray Level Emphasis,Short Run High Gray Level Emphasis
+GLRLM,LRLGE,Long Run Low Gray Level Emphasis,Long Run Low Gray Level Emphasis
+GLRLM,LRHGE,Long Run High Gray Level Emphasis,Long Run High Gray Level Emphasis
+HIST,Sum,Sum,Sum
+HIST,Mean,Mean,Mean
+HIST,Min,Minimum,Minimum
+HIST,Max,Maximum,Maximum
+HIST,Variance,Variance,Variance
+HIST,Skewness,Skewness,Skewness
+HIST,Kurtosis,Kurtosis,Kurtosis
+HIST,Range,Range,Range
+HIST,MeanAbsDeviation,Mean Absolute Deviation,Mean Absolute Deviation
+HIST,MedianAbsDeviation,Median Absolute Deviation,Median Absolute Deviation
+HIST,InterQuartileRange,Interquartile Range,Interquartile Range
+HIST,Per01,1st Percentile,1^st^ Percentile
+HIST,Per10,10th Percentile,10^th^ Percentile
+HIST,Per25,25th Percentile,25^th^ Percentile
+HIST,Per50,Median,Median
+HIST,Per75,75th Percentile,75^th^ Percentile
+HIST,Per90,90th Percentile,90^th^ Percentile
+HIST,Per95,95th Percentile,95^th^ Percentile
+HIST,Per99,99th Percentile,99^th^ Percentile
+HIST,Entropy,Entropy,Entropy
+HIST,Uniformity,Uniformity,Uniformity
+HIST,Energy,Energy,Energy
+HIST,RMS,Root Mean Square,Root Mean Square
+LUNG,Mode,Mode,Mode
+LUNG,LAA856,LAA-856,$LAA_{-856}$
+LUNG,LAA856Per,%LAA-856,$%LAA_{-856}$
+LUNG,LAA864,LAA-864,$LAA_{-864}$
+LUNG,LAA864Per,%LAA-864,$%LAA_{-864}$
+LUNG,LAA900,LAA-900,$LAA_{-900}$
+LUNG,LAA900Per,%LAA-900,$%LAA_{-900}$
+LUNG,LAA910,LAA-910,$LAA_{-910}$
+LUNG,LAA910Per,%LAA-910,$%LAA_{-910}$
+LUNG,LAA960,LAA-960,$LAA_{-960}$
+LUNG,LAA960Per,%LAA-960,$%LAA_{-960}$
+LUNG,Reserve,Reserve,Reserve
+LUNG,ReservePer,%Reserve,%Reserve
+LUNG,Upper960,Upper LAA-960,Upper $LAA_{-960}$
+LUNG,Upper960Per,Upper %LAA-960,Upper $%LAA_{-960}$
+LUNG,Lower960,Lower LAA-960,Lower $LAA_{-960}$
+LUNG,Lower960Per,Lower %LAA-960,Lower $%LAA_{-960}$
+LUNG,Upper960Lower960,Upper/Lower LAA-960 Ratio,Upper/Lower $LAA_{-960}$ Ratio
+LUNG,Number910,Cluster Count LAA-910,Cluster Count $LAA_{-910}$
+LUNG,MeanVol910,Mean Cluster Volume LAA-910,Mean Cluster Volume $LAA_{-910}$
+LUNG,StdVol910,Standard Deviation Cluster Volume LAA-910,Standard Deviation Cluster Volume $LAA_{-910}$
+LUNG,D910,D-910,$D_{-910}$
+LUNG,K910,K-910,$K_{-910}$
+LUNG,Number960,Cluster Count LAA-960,Cluster Count $LAA_{-960}$
+LUNG,MeanVol960,Mean Cluster Volume LAA-960,Mean Cluster Volume $LAA_{-960}$
+LUNG,StdVol960,Standard Deviation Cluster Volume LAA-960,Standard Deviation Cluster Volume $LAA_{-960}$
+LUNG,D960,D-960,$D_{-960}$
+LUNG,K960,K-960,$K_{-960}$
+NGTDM,Coarseness,Coarseness,Coarseness
+NGTDM,Contrast ,Contrast,Contrast
+NGTDM,Busyness,Busyness,Busyness
+NGTDM,Complexity,Complexity,Complexity
+NGTDM,Strength,Strength,Strength
+DVH,Volume,Volume,Volume
+DVH,NumVoxels,Number of Voxels,Number of Voxels
+DVH,Sum,Sum,Sum
+DVH,Mean,Mean,Mean
+DVH,Min,Min,Min
+DVH,Max,Max,Max
+DVH,Variance,Variance,Variance
+DVH,Skewness,Skewness,Skewness
+DVH,Kurtosis,Kurtosis,Kurtosis
+DVH,Range,Range,Range
+DVH,MeanAbsDeviation,Mean Absolute Deviation,Mean Absolute Deviation
+DVH,MedianAbsDeviation,Median Absolute Deviation,Median Absolute Deviation
+DVH,InterQuartileRange,Interquartile Range,Interquartile Range
+DVH,Energy,Energy,Energy
+DVH,RMS,Root Mean Square,Root Mean Square
+DVH,rV5,rV5,$rV_{5}$
+DVH,rV10,rV10,$rV_{10}$
+DVH,rV15,rV15,$rV_{15}$
+DVH,rV20,rV20,$rV_{20}$
+DVH,rV25,rV25,$rV_{25}$
+DVH,rV30,rV30,$rV_{30}$
+DVH,rV35,rV35,$rV_{35}$
+DVH,rV40,rV40,$rV_{40}$
+DVH,rV45,rV45,$rV_{45}$
+DVH,rV50,rV50,$rV_{50}$
+DVH,rV55,rV55,$rV_{55}$
+DVH,rV60,rV60,$rV_{60}$
+DVH,rV65,rV65,$rV_{65}$
+DVH,rV70,rV70,$rV_{70}$
+DVH,rV75,rV75,$rV_{75}$
+DVH,rV80,rV80,$rV_{80}$
+DVH,rV85,rV85,$rV_{85}$
+DVH,rV90,rV90,$rV_{90}$
+DVH,rV95,rV95,$rV_{95}$
+DVH,rV100,rV100,$rV_{100}$
+DVH,aV5,aV5,$aV_{5}$
+DVH,aV10,aV10,$aV_{10}$
+DVH,aV15,aV15,$aV_{15}$
+DVH,aV20,aV20,$aV_{20}$
+DVH,aV25,aV25,$aV_{25}$
+DVH,aV30,aV30,$aV_{30}$
+DVH,aV35,aV35,$aV_{35}$
+DVH,aV40,aV40,$aV_{40}$
+DVH,aV45,aV45,$aV_{45}$
+DVH,aV50,aV50,$aV_{50}$
+DVH,aV55,aV55,$aV_{55}$
+DVH,aV60,aV60,$aV_{60}$
+DVH,aV65,aV65,$aV_{65}$
+DVH,aV70,aV70,$aV_{70}$
+DVH,aV75,aV75,$aV_{75}$
+DVH,aV80,aV80,$aV_{80}$
+DVH,aV85,aV85,$aV_{85}$
+DVH,aV90,aV90,$aV_{90}$
+DVH,aV95,aV95,$aV_{95}$
+DVH,aV100,aV100,$aV_{100}$
+DVH,rD5,D5,$D_{5}$
+DVH,rD10,D10,$D_{10}$
+DVH,rD15,D15,$D_{15}$
+DVH,rD20,D20,$D_{20}$
+DVH,rD25,D25,$D_{25}$
+DVH,rD30,D30,$D_{30}$
+DVH,rD35,D35,$D_{35}$
+DVH,rD40,D40,$D_{40}$
+DVH,rD45,D45,$D_{45}$
+DVH,rD50,D50,$D_{50}$
+DVH,rD55,D55,$D_{55}$
+DVH,rD60,D60,$D_{60}$
+DVH,rD65,D65,$D_{65}$
+DVH,rD70,D70,$D_{70}$
+DVH,rD75,D75,$D_{75}$
+DVH,rD80,D80,$D_{80}$
+DVH,rD85,D85,$D_{85}$
+DVH,rD90,D90,$D_{90}$
+DVH,rD95,D95,$D_{95}$
+DVH,rD100,D100,$D_{100}$
+DVH,moc5,MOC5,$MOC_{5}$
+DVH,moc10,MOC10,$MOC_{10}$
+DVH,moc15,MOC15,$MOC_{15}$
+DVH,moc20,MOC20,$MOC_{20}$
+DVH,moc25,MOC25,$MOC_{25}$
+DVH,moc30,MOC30,$MOC_{30}$
+DVH,moc35,MOC35,$MOC_{35}$
+DVH,moc40,MOC40,$MOC_{40}$
+DVH,moc45,MOC45,$MOC_{45}$
+DVH,moc50,MOC50,$MOC_{50}$
+DVH,moc55,MOC55,$MOC_{55}$
+DVH,moc60,MOC60,$MOC_{60}$
+DVH,moc65,MOC65,$MOC_{65}$
+DVH,moc70,MOC70,$MOC_{70}$
+DVH,moc75,MOC75,$MOC_{75}$
+DVH,moc80,MOC80,$MOC_{80}$
+DVH,moc85,MOC85,$MOC_{85}$
+DVH,moc90,MOC90,$MOC_{90}$
+DVH,moc95,MOC95,$MOC_{95}$
+DVH,moc100,MOC100,$MOC_{100}$
+DVH,moh5,MOH5,$MOH_{5}$
+DVH,moh10,MOH10,$MOH_{10}$
+DVH,moh15,MOH15,$MOH_{15}$
+DVH,moh20,MOH20,$MOH_{20}$
+DVH,moh25,MOH25,$MOH_{25}$
+DVH,moh30,MOH30,$MOH_{30}$
+DVH,moh35,MOH35,$MOH_{35}$
+DVH,moh40,MOH40,$MOH_{40}$
+DVH,moh45,MOH45,$MOH_{45}$
+DVH,moh50,MOH50,$MOH_{50}$
+DVH,moh55,MOH55,$MOH_{55}$
+DVH,moh60,MOH60,$MOH_{60}$
+DVH,moh65,MOH65,$MOH_{65}$
+DVH,moh70,MOH70,$MOH_{70}$
+DVH,moh75,MOH75,$MOH_{75}$
+DVH,moh80,MOH80,$MOH_{80}$
+DVH,moh85,MOH85,$MOH_{85}$
+DVH,moh90,MOH90,$MOH_{90}$
+DVH,moh95,MOH95,$MOH_{95}$
+DVH,moh100,MOH100,$MOH_{100}$

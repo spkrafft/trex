@@ -1,0 +1,15 @@
+#Rolled into trex
+dlmcell: https://www.mathworks.com/matlabcentral/fileexchange/25387-write-cell-array-to-text-file
+subdir: https://github.com/kakearney/subdir-pkg
+sc: https://github.com/ojwoodford/sc
+notifier: https://www.mathworks.com/matlabcentral/fileexchange/28733-notifier
+findobj: https://www.mathworks.com/matlabcentral/fileexchange/14317-findjobj-find-java-handles-of-matlab-graphic-objects
+logindlg: https://www.mathworks.com/matlabcentral/fileexchange/8499-login
+ccc calculation: https://github.com/zuoxinian/CCS
+3d gamma: http://www.mistir.info/3d-gamma
+nancov: https://www.mathworks.com/matlabcentral/fileexchange/41961-nanconv/content/nanconv.m
+
+#Inspiration
+CERR
+IBEX
+Undocumented Matlab

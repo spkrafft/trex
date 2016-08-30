@@ -1,0 +1,8 @@
+dvh,toggle,on
+plan,toggle,on
+location,toggle,on
+spatialdvh,toggle,on
+spatialdvh,weight,Radial_XY
+spatialdvh,weight,Sup_Inf
+spatialdvh,weight,Ant_Post
+spatialdvh,weight,Right_Left
