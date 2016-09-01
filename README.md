@@ -1,5 +1,7 @@
 # TREX: DEVELOPING A FRAMEWORK FOR EXTRACTION OF CT IMAGE FEATURES IN A RADIATION ONCOLOGY ENVIRONMENT
 
+[![DOI](https://zenodo.org/badge/24195/spkrafft/trex.svg)](https://zenodo.org/badge/latestdoi/24195/spkrafft/trex)
+
 TREX was originally designed to facilitate extraction of radiomics features from CT images using MATLAB. Specifically, this set of tools was designed with a focus on quantifying normal lung phenotypes of non-small-cell lung cancer patients treated with radiation therapy, which was the focus of my [dissertation](http://digitalcommons.library.tmc.edu/utgsbs_dissertations/697/). Accordingly, an interface was developed specific to my task and, as of publishing this code, relies heavily on extraction of data from the Philips Pinnacle<sup>3</sup> treatment planning system (Philips HealthCare, Fitchburg, WI). Eventually, I may broaden the scope of TREX to read DICOM images and DICOM-RT structures. Additionally, the focus is on image feature extraction from CT images and will necessitate some modifications to accept imaging data acquired using other modalities. Nonetheless, I hope this code helps to address some of the potential reproducibility concerns for the time being before all of the necessary software features are implemented and testing can be completed.
 
 A few things that I have rolled into TREX or helped during development:
