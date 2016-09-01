@@ -1,5 +1,22 @@
 # TREX: DEVELOPING A FRAMEWORK FOR EXTRACTION OF CT IMAGE FEATURES IN A RADIATION ONCOLOGY ENVIRONMENT
 
+TREX was originally designed to facilitate extraction of radiomics features from CT images using MATLAB. Specifically, this set of tools was designed with a focus on quantifying normal lung phenotypes of non-small-cell lung cancer patients treated with radiation therapy, which was the focus of my [dissertation](http://digitalcommons.library.tmc.edu/utgsbs_dissertations/697/). Accordingly, an interface was developed specific to my task and, as of publishing this code, relies heavily on extraction of data from the Philips Pinnacle<sup>3</sup> treatment planning system (Philips HealthCare, Fitchburg, WI). Eventually, I may broaden the scope of TREX to read DICOM images and DICOM-RT structures. Additionally, the focus is on image feature extraction from CT images and will necessitate some modifications to accept imaging data acquired using other modalities. Nonetheless, I hope this code helps to address some of the potential reproducibility concerns for the time being before all of the necessary software features are implemented and testing can be completed.
+
+A few things that I have rolled into TREX or helped during development:
+* [CERR](https://github.com/adityaapte/CERR)
+* [dlmcell](https://www.mathworks.com/matlabcentral/fileexchange/25387-write-cell-array-to-text-file)
+* [findobj](https://www.mathworks.com/matlabcentral/fileexchange/14317-findjobj-find-java-handles-of-matlab-graphic-objects)
+* [IBEX](http://bit.ly/IBEXSrc_MDAnderson)
+* [logindlg](https://www.mathworks.com/matlabcentral/fileexchange/8499-login)
+* [notifier](https://www.mathworks.com/matlabcentral/fileexchange/28733-notifier)
+* [sc](https://github.com/ojwoodford/sc)
+* [subdir](https://github.com/kakearney/subdir-pkg)
+* [Undocumented MATLAB](http://undocumentedmatlab.com/)
+
+TREX is intended only for research purposes. Below is a slightly more expanded description of the rationale and function of TREX.
+
+***
+
 ## INTRODUCTION
 Imaging is a routine and increasingly important aspect of medical care in the era of precision medicine. Having evolved from being primarily used for diagnostic purposes, medical imaging plays a central role in defining prognosis, monitoring disease progression, screening, treatment planning and guidance, and assessment of therapeutic interventions. An already abundant and growing number of imaging technologies can provide anatomical, functional, and molecular information to non-invasively probe the spatial and temporal heterogeneities that are present in the underlying disease of an individual (1).
 
