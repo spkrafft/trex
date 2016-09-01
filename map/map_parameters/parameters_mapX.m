@@ -1,5 +1,5 @@
-function parameters = parameters_textureX(input_profile)
-% PARAMETERS_TEXTUREX Create programmatic GUI with uitree to select
+function parameters = parameters_mapX(input_profile)
+% PARAMETERS_MAPX Create programmatic GUI with uitree to select
 %   parameters for testureX
 %
 %   Notes
@@ -7,14 +7,14 @@ function parameters = parameters_textureX(input_profile)
 %   Blerg...used nested functions for the callbacks to get the correct
 %   output when the figure is closed.
 %
-%   Parts are borrowed from uitree code posted on the undocumentedmatlab 
+%   Parts are borrowed from uitree code posted on the undocumentedmatlab
 %   blog (http://undocumentedmatlab.com/blog/customizing-uitree-nodes-2)
 %
 %   $SPK
 
 import javax.swing.*
 import javax.swing.tree.*;
- 
+
 h.profile = input_profile;
 
 % figure window
@@ -22,14 +22,14 @@ f = figure('Units','normalized','Position',[0 0 0.25 0.50],...
            'Menubar','none',...
            'WindowStyle','modal',...
            'CloseRequestFcn',@myCloseRequestFcn);
-       
+
     %--------------------------------------------------------------------------
     function myCloseRequestFcn(hObject,~)
 
         selection = questdlg('Apply currently selected parameters?',...
-                             'Texture Parameters',...
-                             'Apply','No','No'); 
-        switch selection, 
+                             'Map Parameters',...
+                             'Apply','No','No');
+        switch selection,
             case 'Apply',
                 h.apply = true;
             case 'No'
@@ -41,32 +41,32 @@ f = figure('Units','normalized','Position',[0 0 0.25 0.50],...
         else
             delete(hObject);
         end
-        
+
         clear
     end  %end of myCloseRequestFcn
-    %--------------------------------------------------------------------------  
-       
+    %--------------------------------------------------------------------------
+
 movegui(f,'center')
 
-[h] = parameterfields_textureX(h);
+[h] = parameterfields_mapX(h);
 
 [I,map] = checkedIcon;
 h.javaImage_checked = im2java(I,map);
- 
+
 [I,map] = uncheckedIcon;
 h.javaImage_unchecked = im2java(I,map);
- 
+
 % h.javaImage_checked/unchecked are assumed to have the same width
 iconWidth = h.javaImage_unchecked.getWidth;
- 
+
 h.node.root = uitreenode('v0','root','Image Feature Extraction Parameters',[],0);
 
 for mCount = 1:numel(h.module_names)
     h = createNodes(h,h.module_names{mCount});
 end
- 
+
 mainDir = fileparts(which('TREX'));
-h.parameter_path = fullfile(mainDir,'textureX','Texture Parameter Profiles');
+h.parameter_path = fullfile(mainDir,'map','Map Parameter Profiles');
 
 if isempty(h.profile)
     h.profile = readcsvX(fullfile(h.parameter_path,'parameters_default.trex'));
@@ -74,12 +74,12 @@ end
 
 %Load all profiles
 for mCount = 1:numel(h.module_names)
-   loadProfile(h,h.module_names{mCount}) 
+   loadProfile(h,h.module_names{mCount})
 end
-    
+
 % set treeModel
 treeModel = DefaultTreeModel(h.node.root);
- 
+
 % create the tree
 tree = uitree('v0');
 tree.setModel(treeModel);
@@ -97,7 +97,7 @@ set(tree,'NodeSelectedCallback',@selected_cb);
         node = nodes(1);
         path = node2path(node);
     end  %end of selected_cb
-    %-------------------------------------------------------------------------- 
+    %--------------------------------------------------------------------------
 
     %--------------------------------------------------------------------------
     function path = node2path(node)
@@ -113,13 +113,13 @@ set(tree,'NodeSelectedCallback',@selected_cb);
             path = p{1};
         end
     end  %end of node2path
-    %-------------------------------------------------------------------------- 
- 
+    %--------------------------------------------------------------------------
+
 % make root the initially selected node
 tree.setSelectedNode(h.node.root);
 tree.expand(h.node.root);
 for mCount = 1:numel(h.module_names)
-   tree.expand(h.node.(h.module_names{mCount}).root); 
+   tree.expand(h.node.(h.module_names{mCount}).root);
 end
 
 % MousePressedCallback is not supported by the uitree, but by jtree
@@ -156,7 +156,7 @@ set(jtree,'MousePressedCallback',@mousePressedCallback);
             end
         end
     end  %end of mousePressedCallback
-    %-------------------------------------------------------------------------- 
+    %--------------------------------------------------------------------------
 
 push_loadprofile = uicontrol('string','Load Parameter Profile',...
                              'fontsize',10,...
@@ -166,16 +166,16 @@ push_loadprofile = uicontrol('string','Load Parameter Profile',...
 
     %--------------------------------------------------------------------------
     function push_loadprofile_Callback(~,~)
-        
+
         for mCount = 1:numel(h.module_names)
-            resetProfile(h,h.module_names{mCount}) 
+            resetProfile(h,h.module_names{mCount})
         end
 
-        [filename,pathname] = uigetfile('*.trex','Select texture parameter profile',h.parameter_path);
+        [filename,pathname] = uigetfile('*.trex','Select parameter profile',h.parameter_path);
         [h.profile] = readcsvX(fullfile(pathname,filename));
-       
+
         for mCount = 1:numel(h.module_names)
-            loadProfile(h,h.module_names{mCount}) 
+            loadProfile(h,h.module_names{mCount})
         end
 
 
@@ -183,17 +183,17 @@ push_loadprofile = uicontrol('string','Load Parameter Profile',...
         for mCount = 1:numel(h.module_names)
             tree.collapse(h.node.(h.module_names{mCount}).root);
         end
-        
+
         tree.setSelectedNode(h.node.root);
-        
+
         tree.expand(h.node.root);
         for mCount = 1:numel(h.module_names)
             tree.expand(h.node.(h.module_names{mCount}).root);
         end
 
     end  %end of push_loadprofile_Callback
-    %-------------------------------------------------------------------------- 
-    
+    %--------------------------------------------------------------------------
+
 push_saveprofile = uicontrol('string','Save Parameter Profile',...
                              'fontsize',10,...
                              'units','normalized',...
@@ -205,11 +205,11 @@ push_saveprofile = uicontrol('string','Save Parameter Profile',...
 
         out = [];
         out.module_names = h.module_names;
-        for mCount = 1:numel(h.module_names) 
+        for mCount = 1:numel(h.module_names)
             out = readTreeValues(h,out,h.module_names{mCount});
         end
-        
-        profile = profilewrite_textureX(out);
+
+        profile = profilewrite_mapX(out);
 
         prompt = {'Enter profile name:'};
         dlg_title = 'Save Profile';
@@ -218,8 +218,8 @@ push_saveprofile = uicontrol('string','Save Parameter Profile',...
 
         dlmcellX(fullfile(h.parameter_path,filename),profile)
     end  %end of push_saveprofile_Callback
-    %-------------------------------------------------------------------------- 
-    
+    %--------------------------------------------------------------------------
+
 push_apply = uicontrol('string','Apply Parameters',...
                        'fontsize',10,...
                        'units','normalized',...
@@ -231,16 +231,16 @@ push_apply = uicontrol('string','Apply Parameters',...
 
         h.apply = true;
         uiresume(f);
-        
+
     end  %end of push_apply_Callback
-    %-------------------------------------------------------------------------- 
-    
+    %--------------------------------------------------------------------------
+
 push_cancel = uicontrol('string','Cancel',...
                         'fontsize',10,...
                         'units','normalized',...
                         'position',[0.62 0.56 0.36 0.10],...
                         'callback',@push_cancel_Callback);
-                    
+
     %--------------------------------------------------------------------------
     function push_cancel_Callback(~,~)
 
@@ -248,18 +248,18 @@ push_cancel = uicontrol('string','Cancel',...
         uiresume(f);
 
     end  %end of push_cancel_Callback
-    %-------------------------------------------------------------------------- 
-    
+    %--------------------------------------------------------------------------
+
 uiwait(f);
 
 parameters = [];
 
 if h.apply == 1
-    for mCount = 1:numel(h.module_names) 
+    for mCount = 1:numel(h.module_names)
         parameters = readTreeValues(h,parameters,h.module_names{mCount});
     end
 else
-    msgbox('Selected Parameters Not Applied!','Texture Parameters')
+    msgbox('Selected Parameters Not Applied!','Map Parameters')
 end
 
 delete(f)
@@ -267,7 +267,7 @@ delete(f)
 %%
 clearvars -except parameters
 
-end %end of parameters_textureX
+end %end of parameters_mapX
 %--------------------------------------------------------------------------
 
 %--------------------------------------------------------------------------
@@ -332,7 +332,7 @@ function [I,map] = uncheckedIcon()
         0,0,0;
         0,0,0;
         0,0,0];
-    
+
 end %end of uncheckedIcon
 
 %--------------------------------------------------------------------------
@@ -362,11 +362,17 @@ function [h] = createNodes(h,module)
     h.node.(module).root = uitreenode('v0','unselected', str, [], 0);
     h.node.(module).root.setIcon(h.javaImage_unchecked);
     h.node.root.add(h.node.(module).root);
-    
+
     for pCount = 1:numel(h.param_fields)
         p_field = h.param_fields{pCount};
-        
+
         switch p_field
+            case 'block_size'
+                p_str = 'Block Size (Pixels)';
+            case 'overlap'
+                p_str = 'Overlap (Pixels)';
+            case 'shift'
+                p_str = 'Shift (Pixels)';
             case 'preprocess'
                 p_str = 'Preprocess';
             case 'bd'
@@ -378,13 +384,13 @@ function [h] = createNodes(h,module)
             case 'dim'
                 p_str = 'Dimension';
             case 'dist'
-                p_str = 'Distance';
+                p_str = 'Distance (Pixels)';
             case 'toggle'
                 p_str = 'na';
             otherwise
                 error('here')
         end
-    
+
         if strcmpi(p_field,'toggle')
             %Nothing
 
@@ -396,7 +402,7 @@ function [h] = createNodes(h,module)
                 h.node.(module).(p_field){k} = uitreenode('v0','unselected',h.([p_field,'_strings']){k},[],0);
                 h.node.(module).(p_field){k}.setIcon(h.javaImage_unchecked);
                 h.node.(module).([p_field,'root']).add(h.node.(module).(p_field){k});
-            end    
+            end
 
         elseif isfield(h.(module),p_field)
             h.node.(module).([p_field,'root']) = uitreenode('v0','dummy',p_str,[],0);
@@ -416,12 +422,12 @@ function resetProfile(h,module)
 %% Reset all checkboxes for the given module
     for pCount = 1:numel(h.param_fields)
         p_field = h.param_fields{pCount};
-        
+
         if strcmpi(p_field,'toggle')
             node = h.node.(module).root;
             node.setValue('unselected');
             node.setIcon(h.javaImage_unchecked);
-            
+
         elseif isfield(h.node.(module),p_field)
             for k = 1:numel(h.node.(module).(p_field))
                 node = h.node.(module).(p_field){k};
@@ -434,13 +440,13 @@ end %end resetProfile
 
 %--------------------------------------------------------------------------
 function loadProfile(h,module)
-%% Check the boxes based on h.profile  for the given module  
+%% Check the boxes based on h.profile  for the given module
     for pCount = 1:numel(h.param_fields)
         p_field = h.param_fields{pCount};
-        
+
         if strcmpi(p_field,'toggle')
             load_param = h.profile(strcmpi(h.profile(:,1),module) & strcmpi(h.profile(:,2),'toggle'),3);
-            
+
             if strcmpi(load_param,'on')
                 node = h.node.(module).root;
                 node.setValue('selected');
@@ -448,16 +454,16 @@ function loadProfile(h,module)
             end
         elseif isfield(h.node.(module),p_field)
             load_param = h.profile(strcmpi(h.profile(:,1),module) & strcmpi(h.profile(:,2),p_field),3);
-            
+
             [~,nodeIndex] = intersect(h.(p_field),load_param);
-            
+
             for k = 1:numel(nodeIndex)
                 node = h.node.(module).(p_field){nodeIndex(k)};
                 node.setValue('selected');
                 node.setIcon(h.javaImage_checked);
             end
         end
-    end 
+    end
 end %end of loadProfile
 
 %--------------------------------------------------------------------------
@@ -486,6 +492,6 @@ function [out] = readTreeValues(h,out,module)
                 end
             end
             out.(module).(p_field) = h.(p_field)(read_param,:);
-        end   
+        end
     end
 end %end of readTreeValues

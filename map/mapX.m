@@ -1,35 +1,35 @@
-function varargout = textureX(varargin)
-% TEXTUREX MATLAB code for textureX.fig
-%      TEXTUREX, by itself, creates a new TEXTUREX or raises the existing
+function varargout = mapX(varargin)
+% MAPX MATLAB code for mapX.fig
+%      MAPX, by itself, creates a new MAPX or raises the existing
 %      singleton*.
 %
-%      H = TEXTUREX returns the handle to a new TEXTUREX or the handle to
+%      H = MAPX returns the handle to a new MAPX or the handle to
 %      the existing singleton*.
 %
-%      TEXTUREX('CALLBACK',hObject,eventData,h,...) calls the local
-%      function named CALLBACK in TEXTUREX.M with the given input arguments.
+%      MAPX('CALLBACK',hObject,eventData,h,...) calls the local
+%      function named CALLBACK in MAPX.M with the given input arguments.
 %
-%      TEXTUREX('Property','Value',...) creates a new TEXTUREX or raises the
+%      MAPX('Property','Value',...) creates a new MAPX or raises the
 %      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before textureX_OpeningFcn gets called.  An
+%      applied to the GUI before mapX_OpeningFcn gets called.  An
 %      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to textureX_OpeningFcn via varargin.
+%      stop.  All inputs are passed to mapX_OpeningFcn via varargin.
 %
 %      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
 %      instance to run (singleton)".
 %
 % See also: GUIDE, GUIDATA, GUIh
 
-% Edit the above text to modify the response to help textureX
+% Edit the above text to modify the response to help mapX
 
-% Last Modified by GUIDE v2.5 03-Dec-2013 16:07:03
+% Last Modified by GUIDE v2.5 14-Oct-2014 23:40:10
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
-                   'gui_OpeningFcn', @textureX_OpeningFcn, ...
-                   'gui_OutputFcn',  @textureX_OutputFcn, ...
+                   'gui_OpeningFcn', @mapX_OpeningFcn, ...
+                   'gui_OutputFcn',  @mapX_OutputFcn, ...
                    'gui_LayoutFcn',  [] , ...
                    'gui_Callback',   []);
 if nargin && ischar(varargin{1})
@@ -44,7 +44,7 @@ end
 % End initialization code - DO NOT EDIT
 
 %--------------------------------------------------------------------------
-function textureX_OpeningFcn(hObject,eventdata,h,varargin)
+function mapX_OpeningFcn(hObject,eventdata,h,varargin)
 %%
 movegui(hObject,'center')
 
@@ -57,19 +57,19 @@ end
 
 h.now = datestr(now,'yyyymmddHHMMSS');
 
-disp('TREX-RT>> Launching TextureX!');
+disp('TREX-RT>> Launching MapX!');
 disp(['TREX-RT>> Current time: ',h.now]);
 
 [s,mess,messid] = mkdir(h.project_path,'Log');
 %%
 mainDir = fileparts(which('TREX'));
-h.parameter_path = fullfile(mainDir,'textureX','Texture Parameter Profiles');
+h.parameter_path = fullfile(mainDir,'map','Map Parameter Profiles');
 h.profile = readcsvX(fullfile(h.parameter_path,'parameters_default.trex'));
 
-h = parameterfields_textureX(h);
-h = profileread_textureX(h,h.profile);
+h = parameterfields_mapX(h);
+h = profileread_mapX(h,h.profile);
 
-h.axes_wait = axes('Parent',h.figure_texture,...
+h.axes_wait = axes('Parent',h.figure_map,...
                    'XLim',[0 1],...
                    'YLim',[0 1],...
                    'XTick',[],...
@@ -83,7 +83,7 @@ h.patch_wait = patch([0 0 0 0], [0 1 1 0], 'r',...
                      'Parent',h.axes_wait,...
                      'FaceColor','r',...
                      'EdgeColor','none');
-                 
+
 h.text_wait = text(565,15,'',...
                    'Parent',h.axes_wait,...
                    'Units','pixels',...
@@ -91,7 +91,7 @@ h.text_wait = text(565,15,'',...
                    'Visible','on',...
                    'FontUnits','pixels',...
                    'FontSize',12);
-               
+
 h.text_wait2 = text(15,15,'',...
                     'Parent',h.axes_wait,...
                     'Units','pixels',...
@@ -100,7 +100,7 @@ h.text_wait2 = text(15,15,'',...
                     'FontUnits','pixels',...
                     'FontSize',12);
 
-h.tableHeadings =  {'Project Path',         'project_path';...
+h.tableHeadings =  {'Project Path',        'project_path';...
                     'Server Name',          'server_name';...
                     'Server User',          'server_user';...
                     'Institution Dir',      'institution_dir';...
@@ -116,13 +116,13 @@ h.tableHeadings =  {'Project Path',         'project_path';...
                     'ROI Avoid Int',        'roi_int';...
                     'ROI Avoid Ext',        'roi_ext';...
                     'Dose Trial Name',      'dose_name'};
-               
+
 h.setupRead = read_setupX(h.project_path);
 
 h.data = cell(numel(h.setupRead.project_path),size(h.tableHeadings,1));
 for j = 1:size(h.tableHeadings,1)
     for i = 1:numel(h.setupRead.project_path)
-    
+
         if iscell(h.setupRead.(h.tableHeadings{j,2})(i))
             h.data{i,j} = h.setupRead.(h.tableHeadings{j,2}){i};
         else
@@ -156,10 +156,10 @@ if numel(varargin) > 1
             if strcmpi(notify,'on')
                 h.notifier = true;
             end
-            
+
         elseif strcmpi(varargin{i},'extract')
             h.extract_go = true;
-            
+
         elseif strcmpi(varargin{i},'remote_start')
             h.remote_start = true;
         end
@@ -168,36 +168,36 @@ end
 
 clearvars -except h eventdata hObject
 
-% Choose default command line output for textureX
+% Choose default command line output for mapX
 h.output = hObject;
 
 % Update h structure
-guidata(hObject,h);
+guidata(hObject, h);
 
 if h.remote_start
     push_start_Callback(hObject,eventdata,h)
 else
-    % UIWAIT makes textureX wait for user response (see UIRESUME)
-    uiwait(h.figure_texture); 
+    % UIWAIT makes mapX wait for user response (see UIRESUME)
+    uiwait(h.figure_map);
 end
 
 %--------------------------------------------------------------------------
-function varargout = textureX_OutputFcn(hObject,eventdata,h) 
+function varargout = mapX_OutputFcn(hObject,eventdata,h)
 %%
 varargout{1} = h;
 
-delete(h.figure_texture);
+delete(h.figure_map);
 
 %--------------------------------------------------------------------------
-function figure_texture_CloseRequestFcn(hObject,eventdata,h)
+function figure_map_CloseRequestFcn(hObject,eventdata,h)
 %%
-if isequal(get(hObject,'waitstatus'),'waiting')
+if isequal(get(hObject, 'waitstatus'), 'waiting')
     uiresume(hObject);
 else
     delete(hObject);
 end
 
-disp('TREX-RT>> TextureX closed');
+disp('TREX-RT>> MapX closed');
 
 clear
 
@@ -241,17 +241,17 @@ end
 h.extractRead = read_extractX(h.project_path);
 
 if h.notifier
-    h = notifierX(h.project_path,@start_textureX,h);
-%     h = start_textureX(h);
+    h = notifierX(h.project_path,@start_mapX,h);
+%     h = start_mapX(h);
 else
-    h = start_textureX(h);
+    h = start_mapX(h);
 end
 
 clearvars -except h hObject
 
 guidata(hObject,h)
 
-% close(h.figure_texture)
+% close(h.figure_map)
 
 %MENU**********************************************************************
 %--------------------------------------------------------------------------
@@ -260,15 +260,15 @@ function menu_file_Callback(hObject,eventdata,h)
 %--------------------------------------------------------------------------
 function menu_tparameters_Callback(hObject,eventdata,h)
 %%
-parameters = parameters_textureX(h.profile);
+parameters = parameters_mapX(h.profile);
 
 if ~isempty(parameters)
     for i = 1:numel(h.module_names)
-       h.(h.module_names{i}) = parameters.(h.module_names{i}); 
+       h.(h.module_names{i}) = parameters.(h.module_names{i});
     end
 end
 
-h.profile = profilewrite_textureX(h); 
+h.profile = profilewrite_mapX(h);
 
 clearvars -except h hObject
 
@@ -277,7 +277,7 @@ guidata(hObject,h);
 %--------------------------------------------------------------------------
 function menu_exit_Callback(hObject,eventdata,h)
 %%
-close(h.figure_texture)
+close(h.figure_map)
 
 %--------------------------------------------------------------------------
 function menu_utilities_Callback(hObject,eventdata,h)
@@ -312,13 +312,13 @@ index = get(h.table_data,'UserData');
 
 if ~isempty(index)
     index = get(h.table_data,'UserData');
-    
+
     if size(index,1) == 1
         h.viewer = index(1,1);
     else
         msgbox('Please select only one entry')
         return
-    end 
+    end
 end
 
 drawnow; pause(0.001);

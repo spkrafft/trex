@@ -102,7 +102,7 @@ h.setupWrite = read_setupX(h.export.project_path);
 if isempty(h.setupWrite)
     h.setupWrite = initialize_pinnacle_setupX(h.setupWrite);
 end
-  
+
 h.data = cell(numel(h.setupWrite.project_path),size(h.tableHeadings,1));
 for j = 1:size(h.tableHeadings,1)
     for i = 1:numel(h.setupWrite.project_path)
@@ -111,7 +111,7 @@ for j = 1:size(h.tableHeadings,1)
         else
             h.data{i,j} = h.setupWrite.(h.tableHeadings{j,2})(i);
         end
-    
+
     end
 end
 
@@ -121,7 +121,7 @@ col_format = cell(1,numel(h.tableHeadings(:,1)));
 col_format(:) = {'char'};
 set(h.table_data,'ColumnFormat',col_format);
 set(h.table_data,'Data',h.data);
- 
+
 disp('TREX-RT>> setupX.mat data added to table!');
 
 %%
@@ -178,25 +178,25 @@ h.wl_presets = {'Lung',1600,500;...
                 'MR1',700,350;...
                 'MR2',550,275;...
                 'Ultrasound',200,100};
-            
+
 h.active = 'main';
 h.view_main = 'a';
 h.view_minor1 = 's';
 h.view_minor2 = 'c';
-% 
+%
 % set(h.drop_preset,'String',h.wl_presets(:,1))
 % h.wl_current = 'Lung';
 % ind = strcmpi(h.wl_current,h.wl_presets);
-% 
+%
 % h.window = h.wl_presets{ind,2};
 % h.level = h.wl_presets{ind,3};
-% 
+%
 % set(h.edit_window,'String',num2str(h.window));
 % set(h.slider_window,'Value',h.window);
-% 
+%
 % set(h.slider_level,'Value',h.level);
 % set(h.edit_level,'String',num2str(h.level));
-% 
+%
 % bot = h.level-floor(h.window/2);
 % if bot < 0
 %     bot = 0;
@@ -239,7 +239,7 @@ guidata(hObject,h)
 uiwait(h.figure_setup_pinnacle);
 
 %--------------------------------------------------------------------------
-function varargout = pinnacle_setupX_OutputFcn(hObject,eventdata,h) 
+function varargout = pinnacle_setupX_OutputFcn(hObject,eventdata,h)
 %%
 varargout{1} = h;
 
@@ -256,26 +256,26 @@ if isempty(h.data)
     end
 
     fclose('all');
-    
+
     if isequal(get(hObject, 'waitstatus'), 'waiting')
         uiresume(hObject);
     else
         delete(hObject);
     end
-    
+
     diary off
     disp(['TREX-RT>> Log file: ',h.now,'_setupX.xlog'])
     disp('TREX-RT>> setupX.xroi file not saved!')
     disp('TREX-RT>> SetupX closed');
-    
+
     clear
-    
+
 else
     button1 = questdlg('Save setupX before exit?');
 
     if strcmpi(button1,'yes')
         save_setupX(h)
-        
+
         try
             close(h.ftp);
         catch err
@@ -286,13 +286,13 @@ else
 
         button2 = questdlg('Proceed to data extraction?');
 
-        if strcmpi(button2,'yes') 
+        if strcmpi(button2,'yes')
             if isequal(get(hObject, 'waitstatus'), 'waiting')
                 uiresume(hObject);
             else
                 delete(hObject);
             end
-            
+
             diary off
             disp(['TREX-RT>> Log file: ',h.now,'_setupX.xlog'])
             disp('TREX-RT>> SetupX closed');
@@ -324,7 +324,7 @@ else
 
         fclose('all');
         disp('TREX-RT>> setupX.xroi file not saved!')
-        
+
         if isequal(get(hObject, 'waitstatus'), 'waiting')
             uiresume(hObject);
         else
@@ -336,7 +336,7 @@ else
         disp('TREX-RT>> SetupX closed');
 
         clear
-        
+
     end
 end
 
@@ -447,7 +447,7 @@ function drop_roi_CreateFcn(hObject,eventdata,h)
 if ispc && isequal(get(hObject,'BackgroundColor'),get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
- 
+
 %--------------------------------------------------------------------------
 function push_displaycurveroi_Callback(hObject,eventdata,h)
 %%
@@ -458,7 +458,7 @@ if button_state == get(hObject,'Min')
     h.roitoggle_curve = false;
     set(h.menu_displaycurveroi,'Checked','off')
     set(hObject,'Value',0)
-    
+
 elseif button_state == get(hObject,'Max')
     h.roitoggle_curve = true;
     set(h.menu_displaycurveroi,'Checked','on')
@@ -511,7 +511,7 @@ if button_state == get(hObject,'Min')
     h.dosetoggle = false;
     set(h.menu_displaydose,'Checked','off')
     set(hObject,'Value',0)
-    
+
 elseif button_state == get(hObject,'Max')
     h.dosetoggle = true;
     set(h.menu_displaydose,'Checked','on')
@@ -521,7 +521,7 @@ end
 axes_main_setupX(h)
 axes_minor1_setupX(h)
 axes_minor2_setupX(h)
-    
+
 guidata(hObject,h)
 
 %--------------------------------------------------------------------------
@@ -547,7 +547,7 @@ function table_data_CellSelectionCallback(hObject,eventdata,h)
 %%
 if ~isempty(h.data)
     set(h.table_data,'UserData',eventdata.Indices)
-    set(h.push_remove,'Enable','on') 
+    set(h.push_remove,'Enable','on')
 end
 
 guidata(hObject,h)
@@ -559,16 +559,16 @@ index = get(h.table_data,'UserData');
 
 if ~isempty(index)
     index = get(h.table_data,'UserData');
-    
+
     for i = size(index,1):-1:1
         h.data(index(i,1),:) = [];
-        
+
         sNames = fieldnames(h.setupWrite);
         for nCount = 1:numel(sNames)
             h.setupWrite.(sNames{nCount})(index(i,1),:) = [];
         end
     end
-    set(h.table_data,'Data',h.data); 
+    set(h.table_data,'Data',h.data);
 end
 
 pause(0.001)
@@ -576,7 +576,7 @@ pause(0.001)
 set(h.push_remove,'Enable','off')
 
 disp('TREX-RT>> Entry removed');
-    
+
 guidata(hObject,h)
 
 %W/L PANEL*****************************************************************
@@ -627,9 +627,9 @@ if isnan(window)
     errordlg('Input must be a number','Error')
 else
     h.window = window;
-    
+
     set(h.slider_window,'Value',h.window);
-    
+
     bot = h.level-floor(h.window/2);
     if bot < 0
         bot = 0;
@@ -693,9 +693,9 @@ if isnan(level)
     errordlg('Input must be a number','Error')
 else
     h.level = level;
-    
+
     set(h.slider_level,'Value',h.level);
-    
+
     bot = h.level-floor(h.window/2);
     if bot < 0
         bot = 0;
@@ -759,7 +759,7 @@ key = eventdata.Key;
 if strcmpi(h.active,'main')
     if strcmp(key,'uparrow')
         %And we're not out of bounds
-        if (strcmp(h.view_main,'a') && h.main_z < h.export.image_zdim) 
+        if (strcmp(h.view_main,'a') && h.main_z < h.export.image_zdim)
             h.main_z = h.main_z+1;
         elseif (strcmp(h.view_main,'c') && h.main_y < h.export.image_ydim)
             h.main_y = h.main_y+1;
@@ -769,17 +769,17 @@ if strcmpi(h.active,'main')
     %If the down arrow or mouse wheel is turned
     elseif strcmp(key,'downarrow')
         %And we're not out of bounds
-        if (strcmp(h.view_main,'a') && h.main_z > 1) 
+        if (strcmp(h.view_main,'a') && h.main_z > 1)
             h.main_z = h.main_z-1;
         elseif (strcmp(h.view_main,'c') && h.main_y > 1)
             h.main_y = h.main_y-1;
         elseif (strcmp(h.view_main,'s') && h.main_x > 1)
-            h.main_x = h.main_x-1; 
+            h.main_x = h.main_x-1;
         end
     elseif strcmp(key,'a')
         h.view_main = 'a';
     elseif strcmp(key,'s')
-        h.view_main = 's'; 
+        h.view_main = 's';
     elseif strcmp(key,'c')
         h.view_main = 'c';
     end
@@ -789,7 +789,7 @@ if strcmpi(h.active,'main')
 elseif strcmpi(h.active,'minor1')
     if strcmp(key,'uparrow')
         %And we're not out of bounds
-        if (strcmp(h.view_minor1,'a') && h.minor1_z < h.export.image_zdim) 
+        if (strcmp(h.view_minor1,'a') && h.minor1_z < h.export.image_zdim)
             h.minor1_z = h.minor1_z+1;
         elseif (strcmp(h.view_minor1,'c') && h.minor1_y < h.export.image_ydim)
             h.minor1_y = h.minor1_y+1;
@@ -799,17 +799,17 @@ elseif strcmpi(h.active,'minor1')
     %If the down arrow or mouse wheel is turned
     elseif strcmp(key,'downarrow')
         %And we're not out of bounds
-        if (strcmp(h.view_minor1,'a') && h.minor1_z > 1) 
+        if (strcmp(h.view_minor1,'a') && h.minor1_z > 1)
             h.minor1_z = h.minor1_z-1;
         elseif (strcmp(h.view_minor1,'c') && h.minor1_y > 1)
             h.minor1_y = h.minor1_y-1;
         elseif (strcmp(h.view_minor1,'s') && h.minor1_x > 1)
-            h.minor1_x = h.minor1_x-1; 
+            h.minor1_x = h.minor1_x-1;
         end
     elseif strcmp(key,'a')
         h.view_minor1 = 'a';
     elseif strcmp(key,'s')
-        h.view_minor1 = 's'; 
+        h.view_minor1 = 's';
     elseif strcmp(key,'c')
         h.view_minor1 = 'c';
     end
@@ -819,7 +819,7 @@ elseif strcmpi(h.active,'minor1')
  elseif strcmpi(h.active,'minor2')
     if strcmp(key,'uparrow')
         %And we're not out of bounds
-        if (strcmp(h.view_minor2,'a') && h.minor2_z < h.export.image_zdim) 
+        if (strcmp(h.view_minor2,'a') && h.minor2_z < h.export.image_zdim)
             h.minor2_z = h.minor2_z+1;
         elseif (strcmp(h.view_minor2,'c') && h.minor2_y < h.export.image_ydim)
             h.minor2_y = h.minor2_y+1;
@@ -829,17 +829,17 @@ elseif strcmpi(h.active,'minor1')
     %If the down arrow or mouse wheel is turned
     elseif strcmp(key,'downarrow')
         %And we're not out of bounds
-        if (strcmp(h.view_minor2,'a') && h.minor2_z > 1) 
+        if (strcmp(h.view_minor2,'a') && h.minor2_z > 1)
             h.minor2_z = h.minor2_z-1;
         elseif (strcmp(h.view_minor2,'c') && h.minor2_y > 1)
             h.minor2_y = h.minor2_y-1;
         elseif (strcmp(h.view_minor2,'s') && h.minor2_x > 1)
-            h.minor2_x = h.minor2_x-1; 
+            h.minor2_x = h.minor2_x-1;
         end
     elseif strcmp(key,'a')
         h.view_minor2 = 'a';
     elseif strcmp(key,'s')
-        h.view_minor2 = 's'; 
+        h.view_minor2 = 's';
     elseif strcmp(key,'c')
         h.view_minor2 = 'c';
     end
@@ -857,7 +857,7 @@ key = eventdata.VerticalScrollCount;
 if strcmpi(h.active,'main')
     if sum(key) == -1
         %And we're not out of bounds
-        if (strcmp(h.view_main,'a') && h.main_z < h.export.image_zdim) 
+        if (strcmp(h.view_main,'a') && h.main_z < h.export.image_zdim)
             h.main_z = h.main_z+1;
         elseif (strcmp(h.view_main,'c') && h.main_y < h.export.image_ydim)
             h.main_y = h.main_y+1;
@@ -867,21 +867,21 @@ if strcmpi(h.active,'main')
     %If the down arrow or mouse wheel is turned
     elseif sum(key) == 1
         %And we're not out of bounds
-        if (strcmp(h.view_main,'a') && h.main_z > 1) 
+        if (strcmp(h.view_main,'a') && h.main_z > 1)
             h.main_z = h.main_z-1;
         elseif (strcmp(h.view_main,'c') && h.main_y > 1)
             h.main_y = h.main_y-1;
         elseif (strcmp(h.view_main,'s') && h.main_x > 1)
-            h.main_x = h.main_x-1; 
+            h.main_x = h.main_x-1;
         end
     end
 
     axes_main_setupX(h);
-        
+
 elseif strcmpi(h.active,'minor1')
     if sum(key) == -1
         %And we're not out of bounds
-        if (strcmp(h.view_minor1,'a') && h.minor1_z < h.export.image_zdim) 
+        if (strcmp(h.view_minor1,'a') && h.minor1_z < h.export.image_zdim)
             h.minor1_z = h.minor1_z+1;
         elseif (strcmp(h.view_minor1,'c') && h.minor1_y < h.export.image_ydim)
             h.minor1_y = h.minor1_y+1;
@@ -891,12 +891,12 @@ elseif strcmpi(h.active,'minor1')
     %If the down arrow or mouse wheel is turned
     elseif sum(key) == 1
         %And we're not out of bounds
-        if (strcmp(h.view_minor1,'a') && h.minor1_z > 1) 
+        if (strcmp(h.view_minor1,'a') && h.minor1_z > 1)
             h.minor1_z = h.minor1_z-1;
         elseif (strcmp(h.view_minor1,'c') && h.minor1_y > 1)
             h.minor1_y = h.minor1_y-1;
         elseif (strcmp(h.view_minor1,'s') && h.minor1_x > 1)
-            h.minor1_x = h.minor1_x-1; 
+            h.minor1_x = h.minor1_x-1;
         end
     end
 
@@ -905,7 +905,7 @@ elseif strcmpi(h.active,'minor1')
  elseif strcmpi(h.active,'minor2')
     if sum(key) == -1
         %And we're not out of bounds
-        if (strcmp(h.view_minor2,'a') && h.minor2_z < h.export.image_zdim) 
+        if (strcmp(h.view_minor2,'a') && h.minor2_z < h.export.image_zdim)
             h.minor2_z = h.minor2_z+1;
         elseif (strcmp(h.view_minor2,'c') && h.minor2_y < h.export.image_ydim)
             h.minor2_y = h.minor2_y+1;
@@ -915,12 +915,12 @@ elseif strcmpi(h.active,'minor1')
     %If the down arrow or mouse wheel is turned
     elseif sum(key) == 1
         %And we're not out of bounds
-        if (strcmp(h.view_minor2,'a') && h.minor2_z > 1) 
+        if (strcmp(h.view_minor2,'a') && h.minor2_z > 1)
             h.minor2_z = h.minor2_z-1;
         elseif (strcmp(h.view_minor2,'c') && h.minor2_y > 1)
             h.minor2_y = h.minor2_y-1;
         elseif (strcmp(h.view_minor2,'s') && h.minor2_x > 1)
-            h.minor2_x = h.minor2_x-1; 
+            h.minor2_x = h.minor2_x-1;
         end
     end
 
@@ -957,7 +957,7 @@ elseif x > minor2x(1) && x < minor2x(2) && y > minor2y(1) && y < minor2y(2)
 else
     h.active = [];
 end
-    
+
 guidata(hObject,h)
 
 %--------------------------------------------------------------------------
@@ -971,7 +971,7 @@ if strcmpi(h.active,'main')
     set(text_push1,'Visible','off')
     set(text_push2,'Visible','off')
     set(text_push3,'Visible','off')
-    
+
 elseif strcmpi(h.active,'minor1')
     text_push1 = getappdata(h.axes_minor1,'push1');
     text_push2 = getappdata(h.axes_minor1,'push2');
@@ -980,7 +980,7 @@ elseif strcmpi(h.active,'minor1')
     set(text_push1,'Visible','off')
     set(text_push2,'Visible','off')
     set(text_push3,'Visible','off')
-    
+
 elseif strcmpi(h.active,'minor2')
     text_push1 = getappdata(h.axes_minor2,'push1');
     text_push2 = getappdata(h.axes_minor2,'push2');
@@ -1018,7 +1018,7 @@ end
 axes_main_setupX(h)
 axes_minor1_setupX(h)
 axes_minor2_setupX(h)
-    
+
 guidata(hObject,h)
 
 %--------------------------------------------------------------------------
@@ -1151,7 +1151,7 @@ clearvars -except h hObject
 function menu_script_Callback(hObject,eventdata,h)
 %%
 mainDir = fileparts(fileparts(which('pinnacle_setupX')));
-scriptDir = fullfile(mainDir,'setupX','pinnacle_setupX','pinnacle_setup_script');
+scriptDir = fullfile(mainDir,'setup','pinnacle_setupX','pinnacle_setup_script');
 
 filename = uigetfile(fullfile(scriptDir,'*.m'));
 

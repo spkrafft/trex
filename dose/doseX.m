@@ -1,35 +1,35 @@
-function varargout = mapX(varargin)
-% MAPX MATLAB code for mapX.fig
-%      MAPX, by itself, creates a new MAPX or raises the existing
+function varargout = doseX(varargin)
+% DOSEX MATLAB code for doseX.fig
+%      DOSEX, by itself, creates a new DOSEX or raises the existing
 %      singleton*.
 %
-%      H = MAPX returns the handle to a new MAPX or the handle to
+%      H = DOSEX returns the handle to a new DOSEX or the handle to
 %      the existing singleton*.
 %
-%      MAPX('CALLBACK',hObject,eventData,h,...) calls the local
-%      function named CALLBACK in MAPX.M with the given input arguments.
+%      DOSEX('CALLBACK',hObject,eventData,h,...) calls the local
+%      function named CALLBACK in DOSEX.M with the given input arguments.
 %
-%      MAPX('Property','Value',...) creates a new MAPX or raises the
+%      DOSEX('Property','Value',...) creates a new DOSEX or raises the
 %      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before mapX_OpeningFcn gets called.  An
+%      applied to the GUI before doseX_OpeningFcn gets called.  An
 %      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to mapX_OpeningFcn via varargin.
+%      stop.  All inputs are passed to doseX_OpeningFcn via varargin.
 %
 %      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
 %      instance to run (singleton)".
 %
 % See also: GUIDE, GUIDATA, GUIh
 
-% Edit the above text to modify the response to help mapX
+% Edit the above text to modify the response to help doseX
 
-% Last Modified by GUIDE v2.5 14-Oct-2014 23:40:10
+% Last Modified by GUIDE v2.5 27-Jul-2015 15:47:47
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
-                   'gui_OpeningFcn', @mapX_OpeningFcn, ...
-                   'gui_OutputFcn',  @mapX_OutputFcn, ...
+                   'gui_OpeningFcn', @doseX_OpeningFcn, ...
+                   'gui_OutputFcn',  @doseX_OutputFcn, ...
                    'gui_LayoutFcn',  [] , ...
                    'gui_Callback',   []);
 if nargin && ischar(varargin{1})
@@ -44,7 +44,7 @@ end
 % End initialization code - DO NOT EDIT
 
 %--------------------------------------------------------------------------
-function mapX_OpeningFcn(hObject,eventdata,h,varargin)
+function doseX_OpeningFcn(hObject,eventdata,h,varargin)
 %%
 movegui(hObject,'center')
 
@@ -57,19 +57,19 @@ end
 
 h.now = datestr(now,'yyyymmddHHMMSS');
 
-disp('TREX-RT>> Launching MapX!');
+disp('TREX-RT>> Launching DoseX!');
 disp(['TREX-RT>> Current time: ',h.now]);
 
 [s,mess,messid] = mkdir(h.project_path,'Log');
 %%
 mainDir = fileparts(which('TREX'));
-h.parameter_path = fullfile(mainDir,'mapX','Map Parameter Profiles');
+h.parameter_path = fullfile(mainDir,'dose','Dose Parameter Profiles');
 h.profile = readcsvX(fullfile(h.parameter_path,'parameters_default.trex'));
 
-h = parameterfields_mapX(h);
-h = profileread_mapX(h,h.profile);
+h = parameterfields_doseX(h);
+h = profileread_doseX(h,h.profile);
 
-h.axes_wait = axes('Parent',h.figure_map,...
+h.axes_wait = axes('Parent',h.figure_dose,...
                    'XLim',[0 1],...
                    'YLim',[0 1],...
                    'XTick',[],...
@@ -83,7 +83,7 @@ h.patch_wait = patch([0 0 0 0], [0 1 1 0], 'r',...
                      'Parent',h.axes_wait,...
                      'FaceColor','r',...
                      'EdgeColor','none');
-                 
+
 h.text_wait = text(565,15,'',...
                    'Parent',h.axes_wait,...
                    'Units','pixels',...
@@ -91,7 +91,7 @@ h.text_wait = text(565,15,'',...
                    'Visible','on',...
                    'FontUnits','pixels',...
                    'FontSize',12);
-               
+
 h.text_wait2 = text(15,15,'',...
                     'Parent',h.axes_wait,...
                     'Units','pixels',...
@@ -116,13 +116,13 @@ h.tableHeadings =  {'Project Path',        'project_path';...
                     'ROI Avoid Int',        'roi_int';...
                     'ROI Avoid Ext',        'roi_ext';...
                     'Dose Trial Name',      'dose_name'};
-                
+
 h.setupRead = read_setupX(h.project_path);
 
 h.data = cell(numel(h.setupRead.project_path),size(h.tableHeadings,1));
 for j = 1:size(h.tableHeadings,1)
     for i = 1:numel(h.setupRead.project_path)
-    
+
         if iscell(h.setupRead.(h.tableHeadings{j,2})(i))
             h.data{i,j} = h.setupRead.(h.tableHeadings{j,2}){i};
         else
@@ -156,19 +156,20 @@ if numel(varargin) > 1
             if strcmpi(notify,'on')
                 h.notifier = true;
             end
-            
+
         elseif strcmpi(varargin{i},'extract')
             h.extract_go = true;
-            
+
         elseif strcmpi(varargin{i},'remote_start')
             h.remote_start = true;
+
         end
     end
 end
 
 clearvars -except h eventdata hObject
 
-% Choose default command line output for mapX
+% Choose default command line output for doseX
 h.output = hObject;
 
 % Update h structure
@@ -177,19 +178,19 @@ guidata(hObject, h);
 if h.remote_start
     push_start_Callback(hObject,eventdata,h)
 else
-    % UIWAIT makes mapX wait for user response (see UIRESUME)
-    uiwait(h.figure_map);
+    % UIWAIT makes doseX wait for user response (see UIRESUME)
+    uiwait(h.figure_dose);
 end
 
 %--------------------------------------------------------------------------
-function varargout = mapX_OutputFcn(hObject,eventdata,h) 
+function varargout = doseX_OutputFcn(hObject,eventdata,h)
 %%
 varargout{1} = h;
 
-delete(h.figure_map);
+delete(h.figure_dose);
 
 %--------------------------------------------------------------------------
-function figure_map_CloseRequestFcn(hObject,eventdata,h)
+function figure_dose_CloseRequestFcn(hObject,eventdata,h)
 %%
 if isequal(get(hObject, 'waitstatus'), 'waiting')
     uiresume(hObject);
@@ -197,7 +198,7 @@ else
     delete(hObject);
 end
 
-disp('TREX-RT>> MapX closed');
+disp('TREX-RT>> DoseX closed');
 
 clear
 
@@ -235,40 +236,40 @@ if extractdate < setupdate
         end
     end
 
-    pause(1);
+    pause(0.001);
 end
 
 h.extractRead = read_extractX(h.project_path);
 
 if h.notifier
-    h = notifierX(h.project_path,@start_mapX,h);
-%     h = start_mapX(h);
+    h = notifierX(h.project_path,@start_doseX,h);
+%     h = start_doseX(h);
 else
-    h = start_mapX(h);
+    h = start_doseX(h);
 end
 
 clearvars -except h hObject
 
 guidata(hObject,h)
 
-% close(h.figure_map)
+% close(h.figure_dose)
 
 %MENU**********************************************************************
 %--------------------------------------------------------------------------
 function menu_file_Callback(hObject,eventdata,h)
 
 %--------------------------------------------------------------------------
-function menu_tparameters_Callback(hObject,eventdata,h)
+function menu_dparameters_Callback(hObject,eventdata,h)
 %%
-parameters = parameters_mapX(h.profile);
+parameters = parameters_doseX(h.profile,h.project_path);
 
 if ~isempty(parameters)
     for i = 1:numel(h.module_names)
-       h.(h.module_names{i}) = parameters.(h.module_names{i}); 
+       h.(h.module_names{i}) = parameters.(h.module_names{i});
     end
 end
 
-h.profile = profilewrite_mapX(h); 
+h.profile = profilewrite_doseX(h);
 
 clearvars -except h hObject
 
@@ -277,7 +278,7 @@ guidata(hObject,h);
 %--------------------------------------------------------------------------
 function menu_exit_Callback(hObject,eventdata,h)
 %%
-close(h.figure_map)
+close(h.figure_dose)
 
 %--------------------------------------------------------------------------
 function menu_utilities_Callback(hObject,eventdata,h)
@@ -312,13 +313,13 @@ index = get(h.table_data,'UserData');
 
 if ~isempty(index)
     index = get(h.table_data,'UserData');
-    
+
     if size(index,1) == 1
         h.viewer = index(1,1);
     else
         msgbox('Please select only one entry')
         return
-    end 
+    end
 end
 
 drawnow; pause(0.001);

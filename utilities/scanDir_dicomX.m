@@ -4,7 +4,7 @@ function [data_dir] = scanDir_dicomX(project_dir)
 w = waitbar(0,'Please wait...');
 
 mainDir = fileparts(which('TREX'));
-fields = readcsvX(fullfile(mainDir,'utilitiesX','dicom_fields.trex'));
+fields = readcsvX(fullfile(mainDir,'utilities','dicom_fields.trex'));
 
 files = subdirX(project_dir);
 numel(files)
@@ -14,11 +14,11 @@ data_dir = cell(numel(files),numel(fieldnames(g)));
 
 for j = 1:numel(files)
     waitbar(j/numel(files),w);
-    
+
     [g] = emptyg(fields);
-    
+
     if ~isempty(regexpi(files(j).name,'\w*.(img|dcm)')) || ~isempty(regexpi(files(j).name,'^(CT|PT)'))
-        
+
         info = dicominfo(files(j).name);
 %         info = dicominfo(fullfile(project_dir,files(j).name));
 %         fields = fieldnames(info);
@@ -32,7 +32,7 @@ for j = 1:numel(files)
 
         end
     end
-    
+
     data_dir(j,:) = struct2cell(g);
 end
 
@@ -54,6 +54,6 @@ function [g] = emptyg(fields)
 g = cell(0);
 
 for i = 1:numel(fields)
-   g.(['dicom_', fields{i}]) = ''; 
+   g.(['dicom_', fields{i}]) = '';
 end
 %
