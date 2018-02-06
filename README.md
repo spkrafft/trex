@@ -35,7 +35,7 @@ While there is much promise, there are several limitations to radiomics research
 ## DESCRIPTION OF SOFTWARE
 TREX was developed in a MATLAB (Mathworks, Natick, MA) environment and primarily facilitates analysis of CT images and regions of interest (ROIs) that exist within the Pinnacle<sup>3</sup> treatment planning system (Philips HealthCare, Fitchburg, WI). Accordingly, though it is an important part of high-throughput radiomics research, data preparation including image segmentation and dose calculation, rely on the tools available in Pinnacle<sup>3</sup>.
 
-![alt text](misc/Figure TREX 1.png)
+![](trex/misc/Figure TREX 1.png) 
 
 ##### **Figure 1**. TREX project setup GUI. The user navigates through the TPS file system by selecting the server, institution, patient, plan, and structure (i.e. ROI). Optionally, a dose distribution associated with the selected plan can be added. Multiple entries are added to the project workspace to build the TREX project for subsequent image and dosimetric feature analysis.
 
