@@ -38,7 +38,7 @@ if h.export.remote
     if strcmpi(h.export.server_user,'pinnbeta')
         h.export.home_path = '/pinnacle_patient_expansion/BetaPatients/';
     else
-        h.export.home_path = '/pinnacle_patient_expansion/physics/';
+        h.export.home_path = '/pinnacle_patient_expansion/NewPatients/';
     end
 
 else
