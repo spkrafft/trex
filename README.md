@@ -35,13 +35,13 @@ While there is much promise, there are several limitations to radiomics research
 ## DESCRIPTION OF SOFTWARE
 TREX was developed in a MATLAB (Mathworks, Natick, MA) environment and primarily facilitates analysis of CT images and regions of interest (ROIs) that exist within the Pinnacle<sup>3</sup> treatment planning system (Philips HealthCare, Fitchburg, WI). Accordingly, though it is an important part of high-throughput radiomics research, data preparation including image segmentation and dose calculation, rely on the tools available in Pinnacle<sup>3</sup>.
 
-![](misc/Figure TREX 1.png) 
+![](/misc/Figure%20TREX%201.png)
 
 ##### **Figure 1**. TREX project setup GUI. The user navigates through the TPS file system by selecting the server, institution, patient, plan, and structure (i.e. ROI). Optionally, a dose distribution associated with the selected plan can be added. Multiple entries are added to the project workspace to build the TREX project for subsequent image and dosimetric feature analysis.
 
 A graphical user interface was constructed to facilitate browsing of an existing Pinnacle<sup>3</sup> TPS file system after establishing an FTP connection with the TPS server (Figure 1). The user is prompted to navigate each level of the TPS file system (institution, patient, and treatment plan) to identify the primary CT image set associated with a given plan for a patient of interest. The user can select and view the contoured structures, primary CT image set, and calculated dose distributions that exist within the selected patient treatment plan. The option also exists to create new structures based on simple Boolean operations applied to the set of existing contoured structures. The user builds a project by adding multiple structures, plans, and patients to the project workspace. The data can then be imported and converted for further analysis or visualization. Two main categories for data analysis are currently implemented: 1) CT-based image feature extraction and 2) dosimetric data extraction. Each category contains a subset of different modules to calculate different classes of features. A set of tools to visualize the image, structure, and dose data have also been created to facilitate local review (Figure 2).
 
-![](/misc/Figure TREX 2.png)
+![](/misc/Figure%20TREX%202.png)
 
 ##### **Figure 2**. An example of the current visualization module. Image, structure, dose, and feature maps can be displayed and browsed for easy review.
 
@@ -71,11 +71,11 @@ Further description of the calculated features is provided [here](/misc/appendix
 
 Feature extraction parameters specific to the radiomics feature class can be selected and project-specific parameter profiles can be defined within TREX (Figure 3 and Figure 4). Once the modules and parameters of interest are selected, image feature calculation can be initiated. TREX steps through each module (or class) sequentially. After all features have been calculated for every entry with a given feature module, the result is saved as a MATLAB file within the project directory. The extracted feature space is written to an array with each row representing a separate entry from the project workspace and each column defining a unique feature. If feature extraction is repeated with a given module using additional parameters, TREX searches the previously created feature space and ignores calculation of features that have already been completed to save computation time. Additionally, certain image calculation algorithms can take advantage of multiple CPUs via MATLAB's parallel processing toolbox.
 
-![](/misc/Figure TREX 3.png)
+![](/misc/Figure%20TREX%203.png)
 
 ##### **Figure 3**. Global image feature extraction parameter window. Six different radiomics feature classes can be used, each with their own set of control parameters.
 
-![](/misc/Figure TREX 4.png)
+![](/misc/Figure%20TREX%204.png)
 
 ##### **Figure 4**. Local image feature (i.e. map) extraction parameter window. Similar to Figure 3, but additional options to select the locally-defined ROI are included.
 
@@ -90,7 +90,7 @@ A necessary component of RT response assessment or prediction is the dosimetric 
 
 Further description of the features is provided [here](/misc/appendix_dosimetric.pdf).
 
-![](/misc/Figure TREX 5.png)
+![](/misc/Figure%20TREX%205.png)
 
 ##### **Figure 5**. Dosimetric feature extraction parameter window. Five different classes are implemented.
 
